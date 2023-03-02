@@ -1,6 +1,11 @@
-<nav>
+<div class="nav-container">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
 
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</nav>
+    <div class="nav-transparency"></div>
+</div>
