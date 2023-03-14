@@ -7,17 +7,18 @@
 <Navigation/>
 <Header/>
 
-<div class="slider-container">
+<section class="slider-container">
     <div> 
         <p class="text">Lorem ipsum dolor sit amet.</p>
     </div>
     <div> 
         <p class="text">Lorem ipsum dolor sit amet.</p>
+        
     </div>
     <div> 
         <p class="text">Lorem ipsum dolor sit amet.</p>
     </div>
-</div>
+</section>
 
 <br/>
 <slot/>
