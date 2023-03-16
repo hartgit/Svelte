@@ -1,4 +1,9 @@
-<!-- CSS Stlying -->
+<script>
+
+    import Slider from '$lib/slider.svelte'
+</script>
+
+<Slider />
 
 <style> 
 .flex-container {
@@ -38,34 +43,3 @@ button{
 }
 </style>
 
-<!-- JS -->
-<script>
-    // const variable does not change
-    const num = 42;
-
-    //let variable can be changed
-    let first_name = "Lorna";
-
-    let count = 0;
-
-    function incrementCount()
-    {
-        count++;
-    }
-</script>
-
-<!-- HTML -->
-
-<div class = "flex-container">
-<div><h1>Welcome to SvelteKit {first_name}</h1></div>
-
-</div>
-
-
-
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<br>
-<button on:click={incrementCount}>
-    Clicked {count} {count === 1 ? 'time' : 'times'}
-</button>

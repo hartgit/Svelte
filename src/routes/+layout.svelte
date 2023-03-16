@@ -1,3 +1,5 @@
+
+
 <script>
     import '../main.css';
     import Header from '$lib/+header.svelte';
@@ -6,19 +8,6 @@
 
 <Navigation/>
 <Header/>
-
-<section class="slider-container">
-    <div> 
-        <p class="text">Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div> 
-        <p class="text">Lorem ipsum dolor sit amet.</p>
-        
-    </div>
-    <div> 
-        <p class="text">Lorem ipsum dolor sit amet.</p>
-    </div>
-</section>
 
 <br/>
 <slot/>
