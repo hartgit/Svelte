@@ -1,25 +1,13 @@
 <script>
-
+import Header from '$lib/+header.svelte';
     import Slider from '$lib/slider.svelte'
 </script>
 
+<Header/>
 <Slider />
 
 <style> 
-.flex-container {
-  display: flex;
-  background-color: mintcream;
-  justify-content: center;
-  flex-wrap: wrap;
 
-}
-
-.flex-container > div {
-  background-color: #b3e9db;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}
 h1{
     color:rgb(76, 37, 126);
     font-size: 100px;
