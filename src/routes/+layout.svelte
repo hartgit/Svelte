@@ -6,14 +6,10 @@
     import Navigation from '$lib/+nav.svelte';
 </script>
 
-<Navigation/>
-
-
+<Navigation />
 
 <slot/>
 <br/>
-
-
 
 <footer>
     and i am some common footer stuff

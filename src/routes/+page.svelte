@@ -1,33 +1,19 @@
 <script>
-import Header from '$lib/+header.svelte';
-    import Slider from '$lib/slider.svelte'
+  import Header from "$lib/+header.svelte";
+  import Slider from "$lib/slider.svelte";
 </script>
 
-<Header/>
+<Header />
 <Slider />
 
-<style> 
-
-h1{
-    color:rgb(76, 37, 126);
+<style>
+  h1 {
+    color: rgb(76, 37, 126);
     font-size: 100px;
     font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: normal;
     margin-left: 25%;
     flex-wrap: wrap;
-}
-button{
-
-    color: darkslateblue;
-    font-size: 30px;
-    font-family: fantasy;
-    background-color: aquamarine;
-    padding-right: 5%;
-    padding-left: 5%;
-    margin-left: 40%;
-    flex-wrap: wrap;
-
-}
+  }
 </style>
-

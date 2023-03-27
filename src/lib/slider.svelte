@@ -9,16 +9,13 @@
 <style>
   .slider-container {
     display: flex;
-   
-    
+
     justify-content: center;
     align-items: center;
     align-content: space-between;
-   
   }
-  
+
   .cards > img {
-    
     background-color: rgb(226, 238, 236);
     border-radius: 30px;
     flex-wrap: wrap;
@@ -30,8 +27,9 @@
   }
 
   img:hover {
-    transform: scale(1.29);
+    transform: scale(1.2);
     filter: grayscale();
     opacity: 0.5;
+    box-shadow: 0 0 50px rgb(103, 107, 107);
   }
 </style>
