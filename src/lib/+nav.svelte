@@ -11,6 +11,7 @@
 </div>
 
 <style>
+  /* Navbar Formatting */
   nav {
     display: flex;
     width: 100%;
@@ -35,7 +36,7 @@
     position: fixed;
     
   }
-
+/* Nav Effects */
   .nav-transparency {
     position: absolute;
     top: 0;

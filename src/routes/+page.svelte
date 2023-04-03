@@ -7,7 +7,7 @@
 <Slider />
 
 <style>
-  h1 {
+ h1 {
     color: rgb(76, 37, 126);
     font-size: 100px;
     font-style: italic;
@@ -15,5 +15,5 @@
     font-weight: normal;
     margin-left: 25%;
     flex-wrap: wrap;
-  }
+  } 
 </style>
