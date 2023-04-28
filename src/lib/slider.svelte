@@ -1,10 +1,36 @@
+<!--Fetch random image for slider-->
+<script>
+  let img1 ="images/grass.jpg";
+  let img2 = "images/sunset.jpg";
+  let img3 = "images/deer.jpg";
+
+  const baseurl = "https://api.unsplash.com";
+
+  fetch(`${baseurl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=stormy`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+      img1 = data.urls.full;
+      console.log(img1);
+  })
+
+  fetch(`${baseurl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=sunny`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+      img2 = data.urls.full;
+      console.log(img2);
+  })
+
+</script>
+
 <!--Card Containers-->
 
 <section class="slider-container">
   <section class="cards">
     <div
       class="img-container"
-      style="background-image:url(images/grass.jpg); background-size: cover"
+      style="background-image:url({img1}); background-size: cover"
     >
       <div class="text-overlay">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam
@@ -13,7 +39,7 @@
     </div>
     <div
       class="img-container"
-      style="background-image:url(images/sunset.jpg); background-size: cover"
+      style="background-image:url({img2}); background-size: cover"
     >
       <div class="text-overlay">hello</div>
     </div>
