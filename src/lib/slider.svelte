@@ -1,12 +1,30 @@
-<!--Fetch random image for slider-->
+<!--APIs-->
 <script>
+  
+  //Weather API key: d466d663d4fc8c39cad936242a23fc62
+  let humidity = 0;
+  let temperature = 0;
+
+  const weatherUrl = "https://api.openweathermap.org";
+
+  fetch(`${weatherUrl}/data/2.5/weather?lat=41.3874&lon=2.1686&units=metric&appid=d466d663d4fc8c39cad936242a23fc62`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+    humidity = data.main.humidity;
+    temperature = data.main.temp;
+    console.log(humidity)
+    console.log(temperature)
+  })
+  
+  
   let img1 ="images/grass.jpg";
   let img2 = "images/sunset.jpg";
   let img3 = "images/deer.jpg";
 
-  const baseurl = "https://api.unsplash.com";
+  const imgUrl = "https://api.unsplash.com";
 
-  fetch(`${baseurl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=stormy`)
+  fetch(`${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=stormy`)
   .then(res => res.json())
   .then(data => {
     console.log(data)
@@ -14,7 +32,7 @@
       console.log(img1);
   })
 
-  fetch(`${baseurl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=sunny`)
+  fetch(`${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=sunny`)
   .then(res => res.json())
   .then(data => {
     console.log(data)
@@ -33,8 +51,7 @@
       style="background-image:url({img1}); background-size: cover"
     >
       <div class="text-overlay">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam
-        leo id maximus facilisis.
+        Barcelona <br>{temperature} °C<br>{humidity}% <br>
       </div>
     </div>
     <div
