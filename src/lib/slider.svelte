@@ -1,71 +1,76 @@
 <!--APIs-->
 <script>
-  
-  //Weather API key: d466d663d4fc8c39cad936242a23fc62
-  let humidity = 0;
+  import { onMount } from "svelte";
+
+  /*let humidity = 0;
   let temperature = 0;
+  let weather = 0;*/
 
-  const weatherUrl = "https://api.openweathermap.org";
+  let weatherData = [];
 
-  fetch(`${weatherUrl}/data/2.5/weather?lat=41.3874&lon=2.1686&units=metric&appid=d466d663d4fc8c39cad936242a23fc62`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    humidity = data.main.humidity;
-    temperature = data.main.temp;
-    console.log(humidity)
-    console.log(temperature)
-  })
-  
-  
-  let img1 ="images/grass.jpg";
-  let img2 = "images/sunset.jpg";
-  let img3 = "images/deer.jpg";
+  //let imgs = ["images/grass.jpg", "images/sunset.jpg", "images/deer.jpg"]
 
-  const imgUrl = "https://api.unsplash.com";
+  function weatherFetch(lat, lng, idx) {
+    //Weather API key: d466d663d4fc8c39cad936242a23fc62
 
-  fetch(`${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=stormy`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-      img1 = data.urls.full;
-      console.log(img1);
-  })
+    const weatherUrl = "https://api.openweathermap.org";
 
-  fetch(`${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=sunny`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-      img2 = data.urls.full;
-      console.log(img2);
-  })
+    const imgUrl = "https://api.unsplash.com";
 
+    fetch(
+      `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=d466d663d4fc8c39cad936242a23fc62`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        //create empty weather array
+        weatherData[idx] = {};
+
+        //add items to array
+        weatherData[idx].humidity = data?.main?.humidity;
+        weatherData[idx].temperature = data?.main?.temp;
+        weatherData[idx].weather = data.weather[0].id;
+
+        //if statement sets query to weather condition
+        let query = (weatherData[idx].weather = 800 ? "sunny" : "stormy");
+
+        fetch(
+          `${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=${query}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            weatherData[idx].img = data.urls.full;
+            weatherData = [...weatherData]; // svelte hack
+          });
+      });
+  }
+  //on load calls location and weather data
+  onMount(() => {
+    weatherFetch("41.3874", "2.1686", 0);
+    weatherFetch("42.3874", "1.1686", 1);
+    weatherFetch("46.3874", "6.1686", 2);
+  });
 </script>
 
 <!--Card Containers-->
 
 <section class="slider-container">
   <section class="cards">
-    <div
-      class="img-container"
-      style="background-image:url({img1}); background-size: cover"
-    >
-      <div class="text-overlay">
-        Barcelona <br>{temperature} °C<br>{humidity}% <br>
+    {#each weatherData as { img, temperature, humidity, weather }}
+      <div
+        class="img-container"
+        style="background-image:url({img}); background-size: cover"
+      >
+        <div class="text-overlay">
+          Barcelona <br />
+          {temperature} °C<br />
+          {humidity}% <br />
+          {weather}<br />
+        </div>
       </div>
-    </div>
-    <div
-      class="img-container"
-      style="background-image:url({img2}); background-size: cover"
-    >
-      <div class="text-overlay">hello</div>
-    </div>
-    <div
-      class="img-container"
-      style="background-image:url(images/deer.jpg); background-size: cover"
-    >
-      <div class="text-overlay">hello</div>
-    </div>
+    {/each}
   </section>
 </section>
 
@@ -118,5 +123,4 @@
     opacity: 0.5;
     box-shadow: 0 0 50px rgb(103, 107, 107);
   }
-
 </style>
