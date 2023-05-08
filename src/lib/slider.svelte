@@ -86,8 +86,11 @@
   }
   //on load calls location and weather data
   onMount(() => {
+    //London
     weatherFetch("51.5072", "0.1276", 0);
-    weatherFetch("51.5072", "0.1276", 1);
+    //Tokyo
+    weatherFetch("35.6762", "139.6503", 1);
+    //Barcelona
     weatherFetch("46.3874", "6.1686", 2);
   });
 </script>
