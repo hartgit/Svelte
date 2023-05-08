@@ -10,6 +10,7 @@
     background-position: center;
     width: 100%;
     height: 50vh;
+    overflow: hidden;
   }
   .header > .title-overlay {
     width: 100%;
@@ -19,6 +20,7 @@
     align-items: center;
     padding: 20px;
     font-size: 100px;
+    box-sizing: border-box;
     font-family: "Rubik 80s Fade";
     color: rgb(174, 229, 236);
     z-index: 2;

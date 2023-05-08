@@ -33,23 +33,61 @@
         weatherData[idx].weather = data.weather[0].id;
 
         //if statement sets query to weather condition
-        let query = (weatherData[idx].weather = 800 ? "sunny" : "stormy");
+
+        let query;
+        if (weatherData[idx].weather == 800) {
+          query = "clear-sky";
+        } else if (
+          weatherData[idx].weather >= 801 &&
+          weatherData[idx].weather < 805
+        ) {
+          query = "clouds";
+        } else if (
+          weatherData[idx].weather >= 200 &&
+          weatherData[idx].weather < 233
+        ) {
+          query = "thunderstorm";
+        } else if (
+          weatherData[idx].weather >= 300 &&
+          weatherData[idx].weather < 322
+        ) {
+          query = "drizzle";
+        } else if (
+          weatherData[idx].weather >= 500 &&
+          weatherData[idx].weather < 532
+        ) {
+          query = "rainy";
+        } else if (
+          weatherData[idx].weather >= 600 &&
+          weatherData[idx].weather < 623
+        ) {
+          query = "snow";
+        } else if (
+          weatherData[idx].weather >= 701 &&
+          weatherData[idx].weather < 742
+        ) {
+          query = "fog";
+        } else {
+          query = "sky";
+        }
+
+        const clientID = "D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM";
 
         fetch(
-          `${imgUrl}/photos/random/?client_id=D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM&query=${query}`
+          `${imgUrl}/search/photos/?client_id=${clientID}&query=${query}`
         )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            weatherData[idx].img = data.urls.full;
+            weatherData[idx].img = data?.results[0]?.urls?.full;
             weatherData = [...weatherData]; // svelte hack
           });
       });
   }
   //on load calls location and weather data
   onMount(() => {
-    weatherFetch("41.3874", "2.1686", 0);
-    weatherFetch("42.3874", "1.1686", 1);
+    weatherFetch("51.5072", "0.1276", 0);
+    weatherFetch("51.5072", "0.1276", 1);
     weatherFetch("46.3874", "6.1686", 2);
   });
 </script>
@@ -58,16 +96,17 @@
 
 <section class="slider-container">
   <section class="cards">
-    {#each weatherData as { img, temperature, humidity, weather }}
+    {#each weatherData || [] as item}
       <div
         class="img-container"
-        style="background-image:url({img}); background-size: cover"
+        style="background-image:url({item?.img ??
+          'images/grass.jpg'}); background-size: cover"
       >
         <div class="text-overlay">
           Barcelona <br />
-          {temperature} °C<br />
-          {humidity}% <br />
-          {weather}<br />
+          {item?.temperature ?? "0"} °C<br />
+          {item?.humidity ?? "0"}% <br />
+          {item?.weather ?? "0"}<br />
         </div>
       </div>
     {/each}
