@@ -14,11 +14,12 @@
     //Weather API key: d466d663d4fc8c39cad936242a23fc62
 
     const weatherUrl = "https://api.openweathermap.org";
+    const weatherApi = "d466d663d4fc8c39cad936242a23fc62";
 
     const imgUrl = "https://api.unsplash.com";
 
     fetch(
-      `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=d466d663d4fc8c39cad936242a23fc62`
+      `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${weatherApi}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -36,12 +37,15 @@
 
         let query;
         if (weatherData[idx].weather == 800) {
-          query = "clear-sky";
-        } else if (
-          weatherData[idx].weather >= 801 &&
-          weatherData[idx].weather < 805
-        ) {
+          query = "clear+sky";
+        } else if (weatherData[idx].weather == 801) {
+          query = "light+cloud";
+        } else if (weatherData[idx].weather == 802) {
+          query = "sky";
+        } else if (weatherData[idx].weather == 803) {
           query = "clouds";
+        } else if (weatherData[idx].weather == 804) {
+          query = "overcast";
         } else if (
           weatherData[idx].weather >= 200 &&
           weatherData[idx].weather < 233
@@ -51,7 +55,7 @@
           weatherData[idx].weather >= 300 &&
           weatherData[idx].weather < 322
         ) {
-          query = "drizzle";
+          query = "raindrop";
         } else if (
           weatherData[idx].weather >= 500 &&
           weatherData[idx].weather < 532
@@ -71,11 +75,21 @@
           query = "sky";
         }
 
+        //geocoding location api
+        let limit = 1;
+        fetch(
+          `${weatherUrl}/geo/1.0/reverse?lat=${lat}&lon=${lng}&limit=${limit}&appid=${weatherApi}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            weatherData[idx].location = data[0]?.name;
+          });
+
+        //image api call
         const clientID = "D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM";
 
-        fetch(
-          `${imgUrl}/search/photos/?client_id=${clientID}&query=${query}`
-        )
+        fetch(`${imgUrl}/search/photos/?client_id=${clientID}&query=${query}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -90,8 +104,8 @@
     weatherFetch("51.5072", "0.1276", 0);
     //Tokyo
     weatherFetch("35.6762", "139.6503", 1);
-    //Barcelona
-    weatherFetch("46.3874", "6.1686", 2);
+    //
+    weatherFetch("21.3099", "-157.8581", 2);
   });
 </script>
 
@@ -106,7 +120,7 @@
           'images/grass.jpg'}); background-size: cover"
       >
         <div class="text-overlay">
-          Barcelona <br />
+          {item?.location ?? "Unknown"} <br />
           {item?.temperature ?? "0"} °C<br />
           {item?.humidity ?? "0"}% <br />
           {item?.weather ?? "0"}<br />
@@ -156,13 +170,19 @@
     font-size: 24px;
     color: white;
     z-index: 2;
+    transition: transform 0.5s;
   }
 
   /* Hover Effects */
   .img-container:hover {
     transform: scale(1.2);
-    filter: grayscale();
-    opacity: 0.5;
+    
+    opacity: 0.7;
     box-shadow: 0 0 50px rgb(103, 107, 107);
+    
+  }
+  .img-container > .text-overlay:hover{
+    
+    transform: scale(1.2);
   }
 </style>

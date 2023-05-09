@@ -1,6 +1,8 @@
-<div class="header">
-  <div class="title-overlay">Weather</div>
-</div>
+<section class="header">
+  <div class="title-overlay">
+    <div class = "text">Weather</div>
+  </div>
+</section>
 
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Distressed&display=swap');
@@ -19,16 +21,22 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-size: 100px;
+    font-size: 80px;
     box-sizing: border-box;
     font-family: "Rubik 80s Fade";
     color: rgb(174, 229, 236);
     z-index: 2;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
     
   }
-  .header > .title-overlay:hover{
-    transform: scale(2);
+  .title-overlay > .text:hover{
     
+    transition: transform 0.5s;
+    transform: scale(1.6);
+
+  }
+  .text{
+    transition: transform 0.5s;
+
   }
 </style>
