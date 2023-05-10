@@ -178,7 +178,7 @@
     transform: scale(1.2);
     
     opacity: 0.7;
-    box-shadow: 0 0 50px rgb(103, 107, 107);
+    box-shadow: 0 0 50px rgb(104, 104, 104);
     
   }
   .img-container > .text-overlay:hover{
