@@ -36,7 +36,12 @@
         //if statement sets query to weather condition
 
         let query;
-        if (weatherData[idx].weather == 800) {
+        if (
+          weatherData[idx].temperature < 0 &&
+          weatherData[idx].weather >= 800
+        ) {
+          query = "frosty";
+        } else if (weatherData[idx].weather == 800) {
           query = "clear+sky";
         } else if (weatherData[idx].weather == 801) {
           query = "light+cloud";
@@ -75,15 +80,17 @@
           query = "sky";
         }
 
-        //geocoding location api
-        let limit = 1;
+        //LocationIQ geocoding API
+        const url = "https://us1.locationiq.com";
+        const token = "pk.44d2f3c1237317b5d26f968d828e9527";
+
         fetch(
-          `${weatherUrl}/geo/1.0/reverse?lat=${lat}&lon=${lng}&limit=${limit}&appid=${weatherApi}`
+          `${url}/v1/reverse?key=${token}&lat=${lat}&lon=${lng}&format=json`
         )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            weatherData[idx].location = data[0]?.name;
+            weatherData[idx].location = data?.address?.city;
           });
 
         //image api call
@@ -100,12 +107,20 @@
   }
   //on load calls location and weather data
   onMount(() => {
-    //London
-    weatherFetch("51.5072", "0.1276", 0);
-    //Tokyo
-    weatherFetch("35.6762", "139.6503", 1);
-    //
-    weatherFetch("21.3099", "-157.8581", 2);
+    setTimeout(() => {
+      //London
+      weatherFetch("51.5072", "0.1276", 0);
+    }, 1000);
+
+    setTimeout(() => {
+      //Tokyo
+      weatherFetch("35.6762", "139.6503", 1);
+    }, 2000);
+
+    setTimeout(() => {
+      //Yellowstone
+      weatherFetch("44.4157665", "-110.5732942", 2);
+    }, 2500);
   });
 </script>
 
@@ -120,10 +135,9 @@
           'images/grass.jpg'}); background-size: cover"
       >
         <div class="text-overlay">
-          {item?.location ?? "Unknown"} <br />
-          {item?.temperature ?? "0"} °C<br />
-          {item?.humidity ?? "0"}% <br />
-          {item?.weather ?? "0"}<br />
+          {item?.location ?? "Loading..."} <br />
+          {item?.temperature ?? ""} °C<br />
+          {item?.weather ?? ""}<br />
         </div>
       </div>
     {/each}
@@ -166,6 +180,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgb(50, 61, 67);
     padding: 20px;
     font-size: 24px;
     color: white;
@@ -176,13 +192,12 @@
   /* Hover Effects */
   .img-container:hover {
     transform: scale(1.2);
-    
     opacity: 0.7;
     box-shadow: 0 0 50px rgb(104, 104, 104);
-    
   }
-  .img-container > .text-overlay:hover{
-    
+  .img-container > .text-overlay:hover {
     transform: scale(1.2);
+    opacity: 1;
+    text-shadow: 3px 3px 4px rgb(50, 61, 67);
   }
 </style>
