@@ -2,13 +2,7 @@
 <script>
   import { onMount } from "svelte";
 
-  /*let humidity = 0;
-  let temperature = 0;
-  let weather = 0;*/
-
   let weatherData = [];
-
-  //let imgs = ["images/grass.jpg", "images/sunset.jpg", "images/deer.jpg"]
 
   function weatherFetch(lat, lng, idx) {
     //Weather API key: d466d663d4fc8c39cad936242a23fc62

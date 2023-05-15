@@ -1,9 +1,9 @@
 <div class="nav-container">
   <nav>
     <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li><a href = "/">Home</a></li>
+      <li><a href = "Destinations">Destinations</a></li>
+      <li><a href = "About">About</a></li>
     </ul>
   </nav>
 
@@ -34,7 +34,7 @@
   .nav-container {
     display: flex;
     width: 100%;
-    height: 18vh;
+    height: 15vh;
     position: fixed;
     
   }
