@@ -27,7 +27,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-size: 100px;
+    font-size: 7rem;
     box-sizing: border-box;
     font-family: "Koulen";
     letter-spacing: 0.8rem;
@@ -39,8 +39,9 @@
   }
   .text {
     transition: transform 0.5s;
-    background: -webkit-linear-gradient(#e9fafc, #0d6674);
+    background: -webkit-linear-gradient( #0d6674, #e9fafc );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
   }
 </style>

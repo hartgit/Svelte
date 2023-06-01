@@ -4,7 +4,7 @@
 
 <style>
   .footer {
-    background-color: rgb(126, 158, 147);
+    background-color: var(--theme-color);
     width: 100%;
     height: 25px;
     display: flex;
@@ -13,7 +13,7 @@
   }
   .text{
     font-size: 12px;
-    color: var(--nav-text-color);
+    color: var(--text-color);
     font-family: "Quicksand", sans-serif;
     justify-content: center;
     text-align: center;

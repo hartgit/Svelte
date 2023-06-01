@@ -10,6 +10,6 @@
 <Navigation />
 
 <slot/>
-<br/>
+
 <Footer />
 

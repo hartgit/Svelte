@@ -10,10 +10,12 @@ body
 
 a{
 text-decoration: none;
-color: var(--nav-text-color);
+color: var(--text-color);
 }
 
 :root{
-    --nav-text-color: whitesmoke;
+    --text-color: whitesmoke;
+    --theme-color: #86afa1;
+    --curve-color: #3d8377;
 }
 
