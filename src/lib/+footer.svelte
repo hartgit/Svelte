@@ -1,12 +1,22 @@
-<div class="footer">and i am some common footer stuff</div>
+<footer class="footer">
+  <div class="text">and i am some common footer stuff</div>
+</footer>
 
 <style>
   .footer {
-    font-size: 12px;
+    background-color: rgb(126, 158, 147);
     width: 100%;
     height: 25px;
     display: flex;
     margin-top: auto;
     justify-content: center;
+  }
+  .text{
+    font-size: 12px;
+    color: var(--nav-text-color);
+    font-family: "Quicksand", sans-serif;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5px;
   }
 </style>

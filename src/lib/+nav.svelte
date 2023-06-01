@@ -22,7 +22,7 @@
     display: flex;
     list-style: none;
     font-family: "Quicksand", sans-serif;
-    font-size: 24px;
+    font-size: 36px;
     
   }
 
