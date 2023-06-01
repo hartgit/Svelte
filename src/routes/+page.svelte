@@ -1,6 +1,8 @@
 <script>
   import Header from "$lib/+header.svelte";
   import Slider from "$lib/slider.svelte";
+
+  //import Test from "$lib/apitest.svelte";
 </script>
 
 <Header />

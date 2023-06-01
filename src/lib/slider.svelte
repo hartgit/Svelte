@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
 
   let weatherData = [];
-
+ 
   function weatherFetch(lat, lng, idx) {
     //Weather API key: d466d663d4fc8c39cad936242a23fc62
 
@@ -99,8 +99,11 @@
           });
       });
   }
+
+
   //on load calls location and weather data
   onMount(() => {
+    
     setTimeout(() => {
       //London
       weatherFetch("51.5072", "0.1276", 0);
@@ -110,6 +113,11 @@
       //Tokyo
       weatherFetch("35.6762", "139.6503", 1);
     }, 2000);
+
+    setTimeout(() => {
+      //Yellowstone
+      weatherFetch("44.4157665", "-110.5732942", 2);
+    }, 2500);
 
     setTimeout(() => {
       //Yellowstone
@@ -138,6 +146,8 @@
   </section>
 </section>
 
+
+
 <!-- CSS -->
 <style>
   /* Container Formatting */
@@ -151,7 +161,7 @@
   /* Card Formatting */
   .cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
   }
@@ -194,4 +204,6 @@
     opacity: 1;
     text-shadow: 3px 3px 4px rgb(50, 61, 67);
   }
+
+
 </style>
