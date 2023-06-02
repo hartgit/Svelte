@@ -10,10 +10,13 @@ body
 
 a{
 text-decoration: none;
-color: var(--text-color);
+color: var(--link-color);
+text-shadow: 2px 3px 3px rgb(223, 223, 223);
+
 }
 
 :root{
+    --link-color: #474747;
     --text-color: whitesmoke;
     --theme-color: #86afa1;
     --curve-color: #3d8377;

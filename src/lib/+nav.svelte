@@ -16,6 +16,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    
   }
 
   nav ul {
@@ -23,11 +24,12 @@
     list-style: none;
     font-family: "Quicksand", sans-serif;
     font-size: 32px;
-    
+    gap: 20rem;
   }
 
   nav ul li {
     padding: 20px;
+    
     
   }
 
@@ -45,8 +47,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgb(181, 194, 194);
-    opacity: 0.5;
+    background: rgb(216, 216, 216);
+    opacity: 0.65;
     filter: blur(9px);
     z-index: -1;
     

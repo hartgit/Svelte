@@ -9,7 +9,7 @@
   <div class="curve-box"></div>
 </div>
 
-<div class="outer-curve" />
+<div class="outer-curve"></div>
 <section class="cities" />
 
 <style>
@@ -24,8 +24,6 @@
     padding-top: 4%;
     padding-left: 25%;
     text-shadow: 2px -2px 3px #222222;
-    
-
   }
  
   .curve-top {
