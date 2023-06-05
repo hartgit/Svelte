@@ -13,7 +13,6 @@
   @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Distressed&display=swap");
   .header {
-    background-image: url({headerImg});
     background-size: cover;
     background-position: center;
     width: 100%;

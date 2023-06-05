@@ -15,6 +15,13 @@ text-shadow: 2px 3px 3px rgb(223, 223, 223);
 
 }
 
+h2{
+ color: var(--text-color);
+ font-family: "Koulen";
+ font-size: 4.2rem;
+ letter-spacing: 0.4rem;
+}
+
 :root{
     --link-color: #474747;
     --text-color: whitesmoke;

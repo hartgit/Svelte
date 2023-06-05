@@ -1,12 +1,13 @@
 <script>
   import Header from "$lib/+header.svelte";
   import Slider from "$lib/slider.svelte";
-
+  import Image from "$lib/city.svelte";
   //import Test from "$lib/apitest.svelte";
 </script>
 
 <Header />
 <Slider />
+<Image />
 
 <style>
  h1 {

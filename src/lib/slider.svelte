@@ -115,13 +115,13 @@
     }, 2000);
 
     setTimeout(() => {
-      //Yellowstone
-      weatherFetch("44.4157665", "-110.5732942", 2);
+      //Prague
+      weatherFetch("50.0755", "14.4378", 2);
     }, 2500);
 
     setTimeout(() => {
-      //Yellowstone
-      weatherFetch("44.4157665", "-110.5732942", 2);
+      //Buenos Aires
+      weatherFetch("-34.603722", "-58.381592", 3);
     }, 2500);
   });
 </script>

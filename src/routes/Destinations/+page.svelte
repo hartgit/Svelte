@@ -1,16 +1,19 @@
 <script>
   import Header from "$lib/+header.svelte";
+  import City from "$lib/city.svelte";
 </script>
 
 <Header headerImg="images/destination.jpg" headerTitle="Destinations" />
 
 <div class="curve-top">
   <div class="title">Cities</div>
-  <div class="curve-box"></div>
+  <div class="curve-box" />
 </div>
 
-<div class="outer-curve"></div>
-<section class="cities" />
+<div class="outer-curve">
+  <City />
+</div>
+<!-- <section class="cities" /> -->
 
 <style>
   .title {
@@ -25,7 +28,7 @@
     padding-left: 25%;
     text-shadow: 2px -2px 3px #222222;
   }
- 
+
   .curve-top {
     display: flex;
     background-color: var(--curve-color);
@@ -38,7 +41,6 @@
     background-color: var(--curve-color);
     height: 150px;
     width: 100%;
-    
   }
   .outer-curve {
     display: flex;
@@ -52,5 +54,16 @@
     width: 100%;
     height: 20vh;
     border-radius: 0% 0% 0% 0%;
+  }
+  .city-box {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+  }
+  p {
+    text-align: justify;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
   }
 </style>
