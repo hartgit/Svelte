@@ -121,7 +121,7 @@
 
     setTimeout(() => {
       //Buenos Aires
-      weatherFetch("-34.603722", "-58.381592", 3);
+      weatherFetch("41.881832", "-87.623177", 3);
     }, 3200);
   });
 </script>
@@ -137,9 +137,9 @@
           'images/grass.jpg'}); background-size: cover"
       >
         <div class="text-overlay">
-          {item?.location ?? "Loading..."} <br />
+          {item?.location ?? "Loading..."}<br />
           {item?.temperature ?? ""} °C<br />
-          {item?.weather ?? ""}<br />
+          
         </div>
       </div>
     {/each}
@@ -150,6 +150,9 @@
 
 <!-- CSS -->
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
+  
   /* Container Formatting */
   .slider-container {
     display: flex;
@@ -187,7 +190,8 @@
     text-align: center;
     text-shadow: 3px 3px 5px rgb(50, 61, 67);
     padding: 20px;
-    font-size: 24px;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 28px;
     color: white;
     z-index: 2;
     transition: transform 0.5s;

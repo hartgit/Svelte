@@ -8,7 +8,7 @@
     { name: "London", text: londonText, image: "images/london.jpg" },
     { name: "Tokyo", text: tokyoText, image: "images/tokyo.jpg" },
     { name: "Prague", text: pragueText, image: "images/prague.jpg" },
-    { name: "Buenos Aires", text: baText, image: "images/buenosaires.jpg" },
+    { name: "Chicago", text: baText, image: "images/chicago.jpg" },
   ];
 
   cities = [...cities];
