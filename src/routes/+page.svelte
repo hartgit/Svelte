@@ -7,7 +7,7 @@
 
 <Header />
 <Slider />
-<Image />
+
 
 <style>
  h1 {

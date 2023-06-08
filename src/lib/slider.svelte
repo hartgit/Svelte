@@ -117,12 +117,12 @@
     setTimeout(() => {
       //Prague
       weatherFetch("50.0755", "14.4378", 2);
-    }, 2500);
+    }, 2600);
 
     setTimeout(() => {
       //Buenos Aires
       weatherFetch("-34.603722", "-58.381592", 3);
-    }, 2500);
+    }, 3200);
   });
 </script>
 

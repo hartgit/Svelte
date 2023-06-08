@@ -17,15 +17,15 @@
 
 <style>
   .title {
-    font-size: 6rem;
+    font-size: 7.6rem;
     color: var(--text-color);
     font-family: "Quicksand", sans-serif;
     display: flex;
     width: 100%;
     position: absolute;
     justify-content: center;
-    padding-top: 4%;
-    padding-left: 25%;
+    padding-top: 4.5%;
+    padding-left: 35%;
     text-shadow: 2px -2px 3px #222222;
   }
 
@@ -39,12 +39,11 @@
     display: flex;
     border-radius: 5% 10% 50% 100%;
     background-color: var(--curve-color);
-    height: 150px;
+    height: 180px;
     width: 100%;
   }
   .outer-curve {
     display: flex;
-    height: 50vh;
     width: 100%;
     background-color: var(--theme-color);
   }
