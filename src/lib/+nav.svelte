@@ -29,8 +29,6 @@
 
   nav ul li {
     padding: 20px;
-    
-    
   }
 
   .nav-container {
