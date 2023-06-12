@@ -13,7 +13,7 @@
 <div class="outer-curve">
   <City />
 </div>
-<!-- <section class="cities" /> -->
+
 
 <style>
   .title {

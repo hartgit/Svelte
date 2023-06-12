@@ -1,36 +1,18 @@
 <script>
-  let londonText = "london";
-  let tokyoText = "tokyoo";
-  let pragueText = "praguee";
-  let baText = "buenos airess";
+  
+import { cities } from "../lib/stores";
+  
 
-  let cities = [
-    { name: "London", text: londonText, image: "images/london.jpg" },
-    { name: "Tokyo", text: tokyoText, image: "images/tokyo.jpg" },
-    { name: "Prague", text: pragueText, image: "images/prague.jpg" },
-    { name: "Chicago", text: baText, image: "images/chicago.jpg" },
-  ];
-
-  cities = [...cities];
+  
 </script>
 
 <div class="city-box">
   {#each cities as city}
     <article class="text">
       <div>
-        <h2>{city.name}</h2>
-        <p>
+        <h2 id={city.name}>{city.name}</h2>
+        <p >
           {city.text}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est quis
-          ante euismod faucibus id ut ante. Etiam dictum tellus ut mi consectetur
-          accumsan rhoncus ac justo. In nulla justo, auctor at mauris sit amet, aliquet
-          elementum tellus. Nulla ac interdum mi. Phasellus egestas mollis nisl at
-          mattis. Nulla faucibus ante erat, vel pretium ligula malesuada sit amet.
-          Phasellus nec ante est. Duis non turpis vitae lectus tempor placerat sed
-          quis risus. Suspendisse quis efficitur nisi, ut pretium lacus. Donec sed
-          massa quis diam posuere rhoncus. Class aptent taciti sociosqu ad litora
-          torquent per conubia nostra, per inceptos himenaeos. Ut viverra gravida
-          sem in efficitur.
         </p>
       </div>
       <div

@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
 
   let weatherData = [];
- 
+
   function weatherFetch(lat, lng, idx) {
     //Weather API key: d466d663d4fc8c39cad936242a23fc62
 
@@ -100,10 +100,8 @@
       });
   }
 
-
   //on load calls location and weather data
   onMount(() => {
-    
     setTimeout(() => {
       //London
       weatherFetch("51.5072", "0.1276", 0);
@@ -137,22 +135,20 @@
           'images/grass.jpg'}); background-size: cover"
       >
         <div class="text-overlay">
-          {item?.location ?? "Loading..."}<br />
-          {item?.temperature ?? ""} °C<br />
-          
+          <a href="/Destinations#{item.location}">
+            {item?.location ?? "Loading..."}<br />
+            {item?.temperature ?? ""} °C<br /></a
+          >
         </div>
       </div>
     {/each}
   </section>
 </section>
 
-
-
 <!-- CSS -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
   @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
-  
+
   /* Container Formatting */
   .slider-container {
     display: flex;
@@ -188,11 +184,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-shadow: 3px 3px 5px rgb(50, 61, 67);
     padding: 20px;
-    font-family: 'Bungee Shade', cursive;
+    font-family: "Koulen";
     font-size: 28px;
-    color: white;
+    color: var(--text-color);
     z-index: 2;
     transition: transform 0.5s;
   }
@@ -205,9 +200,6 @@
   }
   .img-container > .text-overlay:hover {
     transform: scale(1.2);
-    opacity: 1;
     text-shadow: 3px 3px 4px rgb(50, 61, 67);
   }
-
-
 </style>
