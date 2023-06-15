@@ -1,12 +1,11 @@
 <script>
-  import Header from "$lib/+header.svelte";
-  import Slider from "$lib/slider.svelte";
-  import Image from "$lib/city.svelte";
-  //import Test from "$lib/apitest.svelte";
+  import Header from "$lib/header.svelte";
+  import Cards from "$lib/cards.svelte";
+  
 </script>
 
 <Header />
-<Slider />
+<Cards />
 
 
 <style>

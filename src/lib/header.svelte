@@ -11,7 +11,6 @@
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&family=Rubik+Distressed&display=swap");
   .header {
     background-size: cover;
     background-position: center;
@@ -36,6 +35,8 @@
     transition: transform 0.5s;
     transform: scale(1.6);
   }
+
+  /* makes title a gradient */
   .text {
     transition: transform 0.5s;
     background: -webkit-linear-gradient( #0d6674, #e9fafc );

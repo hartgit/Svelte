@@ -1,17 +1,15 @@
 <script>
-  
-import { cities } from "../lib/stores";
-  
-
-  
+  import { cities } from "../lib/stores";
 </script>
 
+
+<!-- uses cities array to fill properties -->
 <div class="city-box">
   {#each cities as city}
     <article class="text">
       <div>
         <h2 id={city.name}>{city.name}</h2>
-        <p >
+        <p>
           {city.text}
         </p>
       </div>
@@ -24,6 +22,7 @@ import { cities } from "../lib/stores";
 </div>
 
 <style>
+  /* CSS */
   .img-container {
     height: 400px;
     width: 400px;

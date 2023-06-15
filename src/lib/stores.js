@@ -4,6 +4,8 @@ let tokyoText = "Tokyo, the pulsating capital of Japan, is a captivating fusion 
 let pragueText = "Prague, the 'City of a Hundred Spires,' is a fairy-tale destination that transports visitors back in time. With its stunning architecture spanning various periods, Prague boasts a rich history and enchanting charm. Wander through the cobbled streets of the Old Town, where the magnificent Prague Castle and the iconic Charles Bridge await your discovery. Lose yourself in the haunting beauty of the Prague Astronomical Clock, which comes alive with its intricate mechanical performance.";
 let chicagoText = "Chicago, the vibrant metropolis on the shores of Lake Michigan, is a city that pulsates with energy and creativity. Famous for its striking architecture, explore the iconic skyline with landmarks such as the Willis Tower and the Cloud Gate sculpture in Millennium Park. Immerse yourself in the vibrant arts scene at the Art Institute of Chicago or catch a world-class performance at the Chicago Theatre. Indulge in Chicago's renowned deep-dish pizza or savor the diverse culinary offerings in neighborhoods like Wicker Park and Greektown.";
 
+
+//array of city properties
 export let cities = [
   { name: "London", text: londonText, image: "images/london.jpg" },
   { name: "Tokyo", text: tokyoText, image: "images/tokyo.jpg" },

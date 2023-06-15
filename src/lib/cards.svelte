@@ -27,8 +27,7 @@
         weatherData[idx].temperature = data?.main?.temp;
         weatherData[idx].weather = data.weather[0].id;
 
-        //if statement sets query to weather condition
-
+        //if statement sets query to current weather condition
         let query;
         if (
           weatherData[idx].temperature < 0 &&
@@ -87,7 +86,7 @@
             weatherData[idx].location = data?.address?.city;
           });
 
-        //image api call
+        //image api
         const clientID = "D82-RRjMGYl6d9Np2EA4QhTgfEU7WX3sLi4Yq5vGwkM";
 
         fetch(`${imgUrl}/search/photos/?client_id=${clientID}&query=${query}`)
@@ -100,7 +99,7 @@
       });
   }
 
-  //on load calls location and weather data
+  //on mount calls location and weather data
   onMount(() => {
     setTimeout(() => {
       //London

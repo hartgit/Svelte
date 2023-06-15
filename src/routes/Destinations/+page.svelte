@@ -1,5 +1,5 @@
 <script>
-  import Header from "$lib/+header.svelte";
+  import Header from "$lib/header.svelte";
   import City from "$lib/city.svelte";
 </script>
 

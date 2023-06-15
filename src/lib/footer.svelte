@@ -3,8 +3,8 @@
     <ul>
       <li>Copyright © Lorna Hart 2023</li>
       <li>
-        Powered by <a href="https://locationiq.com/">LocationHQ </a> |
-        Weather data provided by <a href="https://openweathermap.org/">OpenWeather</a> |
+        Powered by <a href="https://locationiq.com/">LocationHQ </a> | Weather
+        data provided by <a href="https://openweathermap.org/">OpenWeather</a> |
         Images from <a href="https://unsplash.com/">Unsplash</a>
       </li>
       <li />
@@ -26,7 +26,6 @@
     display: flex;
     background-color: white;
     width: 100%;
-    
     display: flex;
     justify-content: space-evenly;
   }
@@ -37,6 +36,5 @@
     font-family: "Quicksand", sans-serif;
     text-align: center;
     justify-content: center;
-    
   }
 </style>
