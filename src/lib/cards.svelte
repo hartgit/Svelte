@@ -12,6 +12,15 @@
 
     const imgUrl = "https://api.unsplash.com";
 
+    // fetch(
+    //       `https://timeapi.io/api/Time/current/coordinate?latitude=${lat}&longitude=${lng}`
+    //     )
+    //       .then((res) => res.json())
+    //       .then((data) => {
+    //         console.log(data);
+            
+    //       });
+
     fetch(
       `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${weatherApi}`
     )
@@ -26,7 +35,11 @@
         weatherData[idx].humidity = data?.main?.humidity;
         weatherData[idx].temperature = data?.main?.temp;
         weatherData[idx].weather = data.weather[0].id;
+        weatherData[idx].icon = data.weather[0].icon;
 
+        let weatherGroup = parseInt(weatherData[idx].weather/100)
+        console.log(weatherData[idx].icon)
+        
         //if statement sets query to current weather condition
         let query;
         if (
@@ -45,28 +58,23 @@
         } else if (weatherData[idx].weather == 804) {
           query = "overcast";
         } else if (
-          weatherData[idx].weather >= 200 &&
-          weatherData[idx].weather < 233
+          weatherGroup == 2
         ) {
           query = "thunderstorm";
         } else if (
-          weatherData[idx].weather >= 300 &&
-          weatherData[idx].weather < 322
+          weatherGroup == 3
         ) {
           query = "raindrop";
         } else if (
-          weatherData[idx].weather >= 500 &&
-          weatherData[idx].weather < 532
+          weatherGroup == 5
         ) {
           query = "rainy";
         } else if (
-          weatherData[idx].weather >= 600 &&
-          weatherData[idx].weather < 623
+          weatherGroup == 6
         ) {
           query = "snow";
         } else if (
-          weatherData[idx].weather >= 701 &&
-          weatherData[idx].weather < 742
+          weatherGroup == 7
         ) {
           query = "fog";
         } else {
@@ -136,7 +144,9 @@
         <div class="text-overlay">
           <a href="/Destinations#{item.location}">
             {item?.location ?? "Loading..."}<br />
-            {item?.temperature ?? ""} °C<br /></a
+            {parseInt(item?.temperature) ?? ""} °C<br/>
+            <img src= "https://openweathermap.org/img/wn/{item.icon}@2x.png">
+            </a
           >
         </div>
       </div>
@@ -200,5 +210,8 @@
   .img-container > .text-overlay:hover {
     transform: scale(1.2);
     text-shadow: 3px 3px 4px rgb(50, 61, 67);
+  }
+  a{
+    margin-top: 50px;
   }
 </style>
