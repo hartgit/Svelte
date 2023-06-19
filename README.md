@@ -12,6 +12,8 @@ In the future, I would like to randomize the the cities displayed on the cards. 
 
 I would also like to turn the card component into a slider that allows the user to scroll through cities.
 
+Currently all the images displayed on the cards are daytime ones, if I had more time I would adjust this to query a night image when the night weather icon is displayed.
+
 ## Run
 
 Code is located on the `master` branch.
