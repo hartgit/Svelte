@@ -29,7 +29,7 @@
         weatherData[idx].icon = data.weather[0].icon;
 
         let weatherGroup = parseInt(weatherData[idx].weather / 100);
-        console.log(weatherData[idx].icon.indexOf("n") == -1); // day if 'n' is -1 else night
+        console.log(weatherData[idx]); 
 
         //if statement sets query to current weather condition
         let query;
