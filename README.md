@@ -14,6 +14,8 @@ I would also like to turn the card component into a slider that allows the user 
 
 ## Run
 
+Code is located on the `master` branch.
+
 To run a local version of the website use:
 
 ```bash
