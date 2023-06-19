@@ -2,21 +2,22 @@
   import { cities } from "../lib/stores";
 </script>
 
-
 <!-- uses cities array to fill properties -->
 <div class="city-box">
   {#each cities as city}
     <article class="text">
-      <div>
+      <div class="text-box">
         <h2 id={city.name}>{city.name}</h2>
         <p>
           {city.text}
         </p>
       </div>
-      <div
-        class="img-container"
-        style="background-image:url({city.image}); background-size: cover"
-      />
+      <a href={city.link}>
+        <div
+          class="img-container"
+          style="background-image:url({city.image}); background-size: cover"
+        />
+      </a>
     </article>
   {/each}
 </div>
@@ -30,6 +31,7 @@
     border-radius: 30px;
     justify-content: center;
     align-items: center;
+    transition: transform 0.5s;
   }
 
   .cities {
@@ -57,5 +59,11 @@
     padding-bottom: 50px;
     align-items: center;
     justify-content: center;
+  }
+  .text-box {
+    margin-right: 50px;
+  }
+  .img-container:hover {
+    transform: scale(1.2);
   }
 </style>

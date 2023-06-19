@@ -7,10 +7,10 @@ let chicagoText = "Chicago, the vibrant metropolis on the shores of Lake Michiga
 
 //array of city properties
 export let cities = [
-  { name: "London", text: londonText, image: "images/london.jpg" },
-  { name: "Tokyo", text: tokyoText, image: "images/tokyo.jpg" },
-  { name: "Prague", text: pragueText, image: "images/prague.jpg" },
-  { name: "Chicago", text: chicagoText, image: "images/chicago.jpg" },
+  { name: "London", text: londonText, image: "images/london.jpg", link: "https://www.lonelyplanet.com/england/london" },
+  { name: "Tokyo", text: tokyoText, image: "images/tokyo.jpg", link: "https://www.lonelyplanet.com/japan/tokyo" },
+  { name: "Prague", text: pragueText, image: "images/prague.jpg", link: "https://www.lonelyplanet.com/czech-republic/prague" },
+  { name: "Chicago", text: chicagoText, image: "images/chicago.jpg", link: "https://www.lonelyplanet.com/usa/chicago" },
 ];
 
 cities = [...cities];

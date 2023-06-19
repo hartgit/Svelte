@@ -12,15 +12,6 @@
 
     const imgUrl = "https://api.unsplash.com";
 
-    // fetch(
-    //       `https://timeapi.io/api/Time/current/coordinate?latitude=${lat}&longitude=${lng}`
-    //     )
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         console.log(data);
-            
-    //       });
-
     fetch(
       `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${weatherApi}`
     )
