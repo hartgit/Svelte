@@ -12,8 +12,6 @@ In the future, I would like to randomize the the cities displayed on the cards. 
 
 I would also liek to turn the card component into a slider that allows the user to scroll through cities.
 
-Currently the weather icons display a night and day version depending on the timezone. I would like to add functionality where the image changes to night when the night icon is displayed but I am limited by available timezone apis that are free and work with geolocations. 
-
 ## Run
 
 To run a local version of the website use:
@@ -24,6 +22,8 @@ npm run dev
 
 ## Known Bugs
 
-The card components load seperately on a slight delay as the location api only allows 2 requests per second. Very occasionally city names will remain on the `Loading...` display if the internet connection slows down and throws off the timing of the built-in delay.
+* The card components load seperately on a slight delay as the location api only allows 2 requests per second. Very occasionally city names will remain on the `Loading...` display if the internet connection slows down and throws off the timing of the built-in delay.
+* Sometimes Unsplash will load less relevant sponsored images when using a query, as they push these images to the top of the search results.
+  
 
-The weather icons currently display as night, even when the day image is loaded.
+
