@@ -10,7 +10,7 @@ This purpose of this project is to simply display weather data on popular cities
 
 In the future, I would like to randomize the the cities displayed on the cards. Currently, the cooridinates are hard coded. However as it is not really possible to randomize geocoordinates and still get a functioning location for the current api, this would have to be done by either using a database or a different api that has only relevant city information.
 
-I would also liek to turn the card component into a slider that allows the user to scroll through cities.
+I would also like to turn the card component into a slider that allows the user to scroll through cities.
 
 ## Run
 
