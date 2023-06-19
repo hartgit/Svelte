@@ -1,8 +1,8 @@
 <div class="nav-container">
   <nav>
     <ul>
-      <li><a href = "/">Home</a></li>
-      <li><a href = "Destinations">Destinations</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="Destinations">Destinations</a></li>
     </ul>
   </nav>
 
@@ -15,14 +15,13 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    
   }
 
   nav ul {
     display: flex;
     list-style: none;
     font-family: "Quicksand", sans-serif;
-    font-size: 32px;
+    font-size: 3vw;
     gap: 20rem;
   }
 
@@ -32,12 +31,12 @@
 
   .nav-container {
     display: flex;
+
     width: 100%;
     height: 15vh;
     position: fixed;
-    
   }
-/* Nav Effects */
+  /* Nav Effects */
   .nav-transparency {
     position: absolute;
     top: 0;
@@ -48,6 +47,5 @@
     opacity: 0.65;
     filter: blur(9px);
     z-index: -1;
-    
   }
 </style>

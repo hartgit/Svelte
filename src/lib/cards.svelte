@@ -12,15 +12,6 @@
 
     const imgUrl = "https://api.unsplash.com";
 
-    // fetch(
-    //       `https://timeapi.io/api/Time/current/coordinate?latitude=${lat}&longitude=${lng}`
-    //     )
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         console.log(data);
-            
-    //       });
-
     fetch(
       `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${weatherApi}`
     )
@@ -37,9 +28,9 @@
         weatherData[idx].weather = data.weather[0].id;
         weatherData[idx].icon = data.weather[0].icon;
 
-        let weatherGroup = parseInt(weatherData[idx].weather/100)
-        console.log(weatherData[idx].icon)
-        
+        let weatherGroup = parseInt(weatherData[idx].weather / 100);
+        console.log(weatherData[idx].icon); 
+
         //if statement sets query to current weather condition
         let query;
         if (
@@ -57,25 +48,15 @@
           query = "clouds";
         } else if (weatherData[idx].weather == 804) {
           query = "overcast";
-        } else if (
-          weatherGroup == 2
-        ) {
+        } else if (weatherGroup == 2) {
           query = "thunderstorm";
-        } else if (
-          weatherGroup == 3
-        ) {
+        } else if (weatherGroup == 3) {
           query = "raindrop";
-        } else if (
-          weatherGroup == 5
-        ) {
+        } else if (weatherGroup == 5) {
           query = "rainy";
-        } else if (
-          weatherGroup == 6
-        ) {
+        } else if (weatherGroup == 6) {
           query = "snow";
-        } else if (
-          weatherGroup == 7
-        ) {
+        } else if (weatherGroup == 7) {
           query = "fog";
         } else {
           query = "sky";
@@ -144,10 +125,9 @@
         <div class="text-overlay">
           <a href="/Destinations#{item.location}">
             {item?.location ?? "Loading..."}<br />
-            {parseInt(item?.temperature) ?? ""} °C<br/>
-            <img src= "https://openweathermap.org/img/wn/{item.icon}@2x.png">
-            </a
-          >
+            {parseInt(item?.temperature) ?? ""} °C<br />
+            <img src="https://openweathermap.org/img/wn/{item.icon}@2x.png" />
+          </a>
         </div>
       </div>
     {/each}
@@ -158,18 +138,10 @@
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 
-  /* Container Formatting */
-  .slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: space-between;
-  }
-
   /* Card Formatting */
   .cards {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
@@ -211,7 +183,7 @@
     transform: scale(1.2);
     text-shadow: 3px 3px 4px rgb(50, 61, 67);
   }
-  a{
+  a {
     margin-top: 50px;
   }
 </style>
