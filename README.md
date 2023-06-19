@@ -26,3 +26,4 @@ npm run dev
 
 The card components load seperately on a slight delay as the location api only allows 2 requests per second. Very occasionally city names will remain on the `Loading...` display if the internet connection slows down and throws off the timing of the built-in delay.
 
+The weather icons currently display as night, even when the day image is loaded.
