@@ -1,38 +1,28 @@
-# create-svelte
+# The Project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This purpose of this project is to simply display weather data on popular cities.
 
-## Creating a project
+![image](https://github.com/hartgit/Svelte/assets/113650559/59503caf-6df7-451a-b862-1c6e4a023722)
 
-If you're seeing this, you've probably already done this step. Congrats!
+![image](https://github.com/hartgit/Svelte/assets/113650559/0898dcca-e44b-4ab7-bc86-3967a1647caf)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Future Roadmap
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+In the future, I would like to randomize the the cities displayed on the cards. Currently, the cooridinates are hard coded. However as it is not really possible to randomize geocoordinates and still get a functioning location for the current api, this would have to be done by either using a database or a different api that has only relevant city information.
 
-## Developing
+I would also liek to turn the card component into a slider that allows the user to scroll through cities.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Currently the weather icons display a night and day version depending on the timezone. I would like to add functionality where the image changes to night when the night icon is displayed but I am limited by available timezone apis that are free and work with geolocations. 
+
+## Run
+
+To run a local version of the website use:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## Known Bugs
 
-To create a production version of your app:
+The card components load seperately on a slight delay as the location api only allows 2 requests per second. Very occasionally city names will remain on the `Loading...` display if the internet connection slows down and throws off the timing of the built-in delay.
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
