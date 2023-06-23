@@ -15,7 +15,7 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
   }
   .header > .title-overlay {
@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    font-size: 7rem;
+    font-size: 10vmax;
     box-sizing: border-box;
     font-family: "Koulen";
     letter-spacing: 0.8rem;

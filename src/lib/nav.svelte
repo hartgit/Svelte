@@ -19,21 +19,18 @@
 
   nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     font-family: "Quicksand", sans-serif;
-    font-size: 3vw;
-    gap: 20rem;
-  }
-
-  nav ul li {
-    padding: 20px;
+    font-size:2.5vmax;
+    gap: 5rem;
   }
 
   .nav-container {
     display: flex;
-
+    flex-wrap: wrap;
     width: 100%;
-    height: 15vh;
+    height: 18vmin;
     position: fixed;
   }
   /* Nav Effects */
