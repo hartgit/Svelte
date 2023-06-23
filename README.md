@@ -6,7 +6,7 @@ This purpose of this project is to simply display weather data on popular cities
 
 ![image](https://github.com/hartgit/Svelte/assets/113650559/0898dcca-e44b-4ab7-bc86-3967a1647caf)
 
-Mobile view:
+### Mobile view:
 
 ![image](https://github.com/hartgit/Svelte/assets/113650559/306afd2f-dfce-4aef-af03-322e814bdaf1)
 
