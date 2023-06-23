@@ -6,6 +6,10 @@ This purpose of this project is to simply display weather data on popular cities
 
 ![image](https://github.com/hartgit/Svelte/assets/113650559/0898dcca-e44b-4ab7-bc86-3967a1647caf)
 
+Mobile view:
+
+![image](https://github.com/hartgit/Svelte/assets/113650559/306afd2f-dfce-4aef-af03-322e814bdaf1)
+
 ## Future Roadmap
 
 In the future, I would like to randomize the the cities displayed on the cards. Currently, the cooridinates are hard coded. However as it is not really possible to randomize geocoordinates and still get a functioning location for the current api, this would have to be done by either using a database or a different api that has only relevant city information.
