@@ -5,13 +5,13 @@
   let weatherData = [];
 
   function weatherFetch(lat, lng, idx) {
-    //Weather API key: d466d663d4fc8c39cad936242a23fc62
-
+    
     const weatherUrl = "https://api.openweathermap.org";
     const weatherApi = "d466d663d4fc8c39cad936242a23fc62";
 
     const imgUrl = "https://api.unsplash.com";
 
+    //Weather data api
     fetch(
       `${weatherUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${weatherApi}`
     )
@@ -106,7 +106,7 @@
     }, 2600);
 
     setTimeout(() => {
-      //Buenos Aires
+      //Chicago
       weatherFetch("41.881832", "-87.623177", 3);
     }, 3200);
   });
@@ -114,6 +114,7 @@
 
 <!--Card Containers-->
 
+<!-- Uses a for each loop on the weather data array and displays a card for each city -->
 <section class="slider-container">
   <section class="cards">
     {#each weatherData || [] as item}

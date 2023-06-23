@@ -18,6 +18,7 @@
     height: 70vh;
     overflow: hidden;
   }
+  
   .header > .title-overlay {
     width: 100%;
     height: 100%;
@@ -31,6 +32,7 @@
     letter-spacing: 0.8rem;
     z-index: 2;
   }
+
   .title-overlay > .text:hover {
     transition: transform 0.5s;
     transform: scale(1.6);
@@ -39,9 +41,8 @@
   /* makes title a gradient */
   .text {
     transition: transform 0.5s;
-    background: -webkit-linear-gradient( #0d6674, #e9fafc );
+    background: -webkit-linear-gradient(#0d6674, #e9fafc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
   }
 </style>
