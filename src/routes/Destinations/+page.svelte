@@ -3,6 +3,7 @@
   import City from "$lib/city.svelte";
 </script>
 
+<!-- Changes header image and title -->
 <Header headerImg="images/destination.jpg" headerTitle="Destinations" />
 
 <div class="curve-top">
@@ -13,7 +14,6 @@
 <div class="outer-curve">
   <City />
 </div>
-
 
 <style>
   .title {
@@ -29,6 +29,7 @@
     text-shadow: 2px -2px 3px #222222;
   }
 
+  /* Creates the curved effect */
   .curve-top {
     display: flex;
     background-color: var(--curve-color);
@@ -48,6 +49,7 @@
     background-color: var(--theme-color);
   }
 
+/* City info styling  */
   .cities {
     background-color: whitesmoke;
     width: 100%;
@@ -61,7 +63,7 @@
   }
   p {
     text-align: justify;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     color: var(--text-color);
   }
